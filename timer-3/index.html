@@ -14,7 +14,7 @@
       if (seconds < 1) { // Catch error before seconds go negative.
         clearTimeout(timer);
         el.innerHTML = '<h2>Countdown Complete!</h2>';
-        el.innerHTML += '<a href="" onclick="countDown()">Restart countdown</a>'
+        el.innerHTML += '<a href="" onclick="countDown()">Restarting countdown</a>'
       }
 
       seconds--; // Decrement the seconds accordingly. 
