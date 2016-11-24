@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dead Simple: 10 Second Timer</title>
+</head>
+<body>
+  <div id="status"></div> <!-- Populate JS here -->
+  <script type="text/javascript">
+    function countDown(seconds, element) {
+      var el = document.getElementById(element);
+      el.innerHTML = "Please wait for " + seconds + " seconds.";
+
+      if (seconds < 1) { // Catch error before seconds go negative.
+        clearTimeout(timer);
+        el.innerHTML = '<h2>Countdown Complete!</h2>';
+        el.innerHTML += '<a href="" onclick="countDown()">Restart countdown</a>'
+      }
+
+      seconds--; // Decrement the seconds accordingly. 
+      var timer = setTimeout('countDown('+seconds+', "'+element+'")', 1000);
+    }
+    window.onload = function(){
+      countDown(10, "status");
+    }
+  </script>
+</body>
+</html>
